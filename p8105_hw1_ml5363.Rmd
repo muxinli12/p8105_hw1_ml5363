@@ -1,0 +1,20 @@
+---
+title: "p8105_hw1_ml5363"
+author: "Muxin Li"
+date: "2025-09-16"
+output: github_document
+---
+## Problem 1
+```{r}
+library(tidyverse)
+library(moderndive)
+data("early_january_weather")
+```
+
+there are variables: `r names(early_january_weather)` in the dataset, the size of dataset is `r nrow(early_january_weather) * ncol(early_january_weather)`, the mean temperature is `r mean(pull(early_january_weather,temp))`
+
+```{r}
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+```
+
+The scatterplot shows a clear diurnal pattern in temperature over time: temperatures tend to rise during daytime and drop overnight. Coloring by humid  shows that warmer periods generally coincide with lower humidity, while cooler periods tend to have higher humidity.
