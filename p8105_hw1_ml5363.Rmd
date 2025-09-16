@@ -36,3 +36,4 @@ the mean of random sample is `r mean(pull(example_df,random_sample))`
 the mean of logical vector is `r mean(pull(example_df,logical_vector))`
 the mean of character vector is `r mean(pull(example_df,character_vector))`
 the mean of score factor is `r mean(pull(example_df,score_factor))`
+random sample and logical vector work, but character vector and score factor donot work
