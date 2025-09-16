@@ -15,6 +15,24 @@ there are variables: `r names(early_january_weather)` in the dataset, the size o
 
 ```{r}
 ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+ggsave("scatter_plot.pdf")
 ```
 
 The scatterplot shows a clear diurnal pattern in temperature over time: temperatures tend to rise during daytime and drop overnight. Coloring by humid  shows that warmer periods generally coincide with lower humidity, while cooler periods tend to have higher humidity.
+
+## Problem 2
+```{r}
+
+example_df = tibble(
+  random_sample= rnorm(10),
+  logical_vector= c(random_sample>0),
+  character_vector= c(sample(letters,10)),
+  score_factor= factor(sample(c("Low","Medium","High"), 10, replace=TRUE))
+)
+example_df
+```
+
+the mean of random sample is `r mean(pull(example_df,random_sample))`
+the mean of logical vector is `r mean(pull(example_df,logical_vector))`
+the mean of character vector is `r mean(pull(example_df,character_vector))`
+the mean of score factor is `r mean(pull(example_df,score_factor))`
